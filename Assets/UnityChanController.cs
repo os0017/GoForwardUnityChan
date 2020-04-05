@@ -22,7 +22,7 @@ public class UnityChanController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        //アニメータ7のコンポーネントを取得する
+        //アニメータのコンポーネントを取得する
         this.animator = GetComponent<Animator>();
         //Rigidbody2Dのコンポーネントを取得する（追加）
         this.rigid2D = GetComponent<Rigidbody2D>();

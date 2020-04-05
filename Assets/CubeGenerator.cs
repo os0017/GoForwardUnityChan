@@ -28,13 +28,17 @@ public class CubeGenerator : MonoBehaviour {
     //キューブの生成個数の上限
     private int maxBlockNum = 4;
 
+    //キューブの生成音(課題)
+    private AudioSource audiodata;
+
     // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    void Start ()
+    {
+        audiodata = GetComponent<AudioSource>();
+    }
+
+    // Update is called once per frame
+    void Update () {
         this.delta += Time.deltaTime;
 
         //span秒以上の時間が経過したかを調べる
@@ -55,6 +59,15 @@ public class CubeGenerator : MonoBehaviour {
             //次のキューブまでの生成時間を決める
             this.span = this.offsetX + this.spaceX * n;
         }
-		
+
 	}
+
+    //キューブ同士が接触したら音を鳴らす（課題）
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (tag == "CubePrefab")
+        {
+            audiodata.Play(1);
+        }
+    }
 }
