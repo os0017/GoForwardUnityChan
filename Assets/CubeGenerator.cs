@@ -65,9 +65,10 @@ public class CubeGenerator : MonoBehaviour {
     //キューブ同士が接触したら音を鳴らす（課題）
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (tag == "CubePrefab")
+        if (other.gameObject.tag == "CubePrefab")
         {
-            audiodata.Play(1);
+            audiodata.PlayDelayed(1);
         }
+        Debug.Log(other.gameObject.tag);
     }
 }
