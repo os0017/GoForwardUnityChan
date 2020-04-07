@@ -28,13 +28,10 @@ public class CubeGenerator : MonoBehaviour {
     //キューブの生成個数の上限
     private int maxBlockNum = 4;
 
-    //キューブの生成音(課題)
-    private AudioSource audiodata;
 
     // Use this for initialization
     void Start ()
     {
-        audiodata = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -62,13 +59,4 @@ public class CubeGenerator : MonoBehaviour {
 
 	}
 
-    //キューブ同士が接触したら音を鳴らす（課題）
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.tag == "CubePrefab")
-        {
-            audiodata.PlayDelayed(1);
-        }
-        Debug.Log(other.gameObject.tag);
-    }
 }

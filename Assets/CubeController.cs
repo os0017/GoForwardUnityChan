@@ -37,7 +37,7 @@ public class CubeController : MonoBehaviour {
     {
         if (other.gameObject.tag == "CubePrefab" || other.gameObject.tag == "ground")
         {
-            audiodata.PlayDelayed(1);
+            audiodata.Play();
         }
     }
 }
